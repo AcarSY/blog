@@ -4,26 +4,44 @@ layout: default
 
 <article>
 
-	<div class="center">
-		<h1 class="title">{{ page.title }}</h1>
-		<p class="author">{{ page.author }} tarafından yazıldı</p>
-		<time class="code">{{ page.date | date: '%B %-d, %Y' }}</time>
-	</div>
+    <div class="center">
+        <h1 class="title">{{ page.title }}</h1>
+        <p class="author">{{ page.author }} tarafından yazıldı</p>
+        <time class="code">{{ page.date | date: '%B %-d, %Y' }}</time>
+    </div>
 
-	<div class="divider"></div>
+    <div class="divider"></div>
 
-	{{ content }}
+    {{ content }}
+
+    {% if page.comments == true %}
+
+    <div class="divider"></div>
+
+    <div id="gh-comments">
+        <br />
+        <p>Yorumlar</p>
+        <div id="gh-comments-list"></div>
+        <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none">Yorumları yükle</a>
+    </div>
+
+    <script type "text/javascript" src="{{ "/js/github-comments.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+    <script type="text/javascript">
+        DoGithubComments(1);
+    </script>
+
+    {% endif %}
 
 </article>
 
 <div class="page-navigation code">
-	{% if page.next.url %}
+    {% if page.next.url %}
     <a class="next" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}" title="Sonraki: {{page.next.title}}">&lt;&lt;</a>
-		<span> &middot; </span>
-  {% endif %}
-		<a class="home" href="{{ "/" | prepend: site.baseurl | prepend: site.url }}" title="Ana sayfaya dön">Ana sayfa</a>
-  {% if page.previous.url %}
-		<span> &middot; </span>
+    <span> &middot; </span>
+    {% endif %}
+    <a class="home" href="{{ "/" | prepend: site.baseurl | prepend: site.url }}" title="Ana sayfaya dön">Ana sayfa</a>
+    {% if page.previous.url %}
+    <span> &middot; </span>
     <a class="prev" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}" title="Önceki: {{page.previous.title}}">&gt;&gt;</a>
-  {% endif %}
+    {% endif %}
 </div>
