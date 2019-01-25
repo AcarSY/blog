@@ -15,7 +15,7 @@ layout: default
     {{ content }}
 
     {% if page.comments == true %}
-
+  
     <div class="divider"></div>
 
     <div id="gh-comments">
@@ -26,8 +26,8 @@ layout: default
     </div>
 
     <script type "text/javascript" src="{{ "/js/github-comments.js" | prepend: site.baseurl | prepend: site.url }}"></script>
-    <script type="text/javascript">
-        DoGithubComments(1);
+		<script type="text/javascript">
+        DoGithubComments(`{{ page.comment_id }}`);
     </script>
 
     {% endif %}
