@@ -21,6 +21,10 @@
 <script async type="text/javascript" src="{{ js }}"></script>
 {% endfor %}
 
+{% for css in page.customcss %}
+<link rel="stylesheet" href="{{ css }}">
+{% endfor %}
+
 {% if site.mathjax %}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% endif %}

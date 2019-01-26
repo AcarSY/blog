@@ -14,6 +14,8 @@ customjs:
 - https://egecue.github.io/blog/assets/static/labirentler/prims.js
 - https://egecue.github.io/blog/assets/static/labirentler/backtracking.js
 - https://egecue.github.io/blog/assets/static/labirentler/draw.js
+customcss:
+- https://egecue.github.io/blog/assets/static/labirentler/styles.css
 ---
 <html lang="en">
 
