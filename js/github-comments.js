@@ -40,7 +40,7 @@ function DoGithubComments(comment_id, page_id) {
 
                 // Add post button to first page
                 if (page_id == 1)
-                    $("#gh-comments-list").append("<a href='" + url + "#new_comment_field' rel='nofollow' class='btn'>GitHub üzerinden yorum yap</a><br/>");
+                    $("#gh-comments-list").append("<a href='" + url + "#new_comment_field' rel='nofollow' class='btn'>GitHub üzerinden yorum yap</a>");
 
                 // Individual comments
                 $.each(comments, function(i, comment) {
@@ -48,10 +48,11 @@ function DoGithubComments(comment_id, page_id) {
                     var date = new Date(comment.created_at);
                     var options = { year: 'numeric', month: 'long', day: 'numeric', hour: "numeric", minute: "numeric"};
 
-                    var t = "<div id='gh-comment'>";
+                    var t = "<br/>";
+                    t += "<div id='gh-comment'>";
                     t += "<img src='" + comment.user.avatar_url + "' width='24px'>";
                     t += "<b><a href='" + comment.user.html_url + "'>" + comment.user.login + "</a></b>";
-                    t += "<em>" + date.toLocaleDateString("tr-TR", options) + "</em>";
+                    t += `<em> ${date.toLocaleDateString("tr-TR", options)}</em>`;
                     t += "<div id='gh-comment-hr'></div>";
                     t += comment.body_html;
                     t += "</div>";
