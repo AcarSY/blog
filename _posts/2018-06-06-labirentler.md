@@ -17,13 +17,13 @@ customjs:
 customcss:
 - https://egecue.github.io/blog/assets/static/labirentler/styles.css
 ---
+
+# Labirent Oluşturma Algoritmaları - Bir Keşif
 <html lang="en">
 
 <body>
 
     <div id="contents">
-        <h1>Labirent Oluşturma Algoritmaları - Bir Keşif</h1>
-
         <p>
             Bu web sayfası,
             <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm">
