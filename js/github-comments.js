@@ -46,12 +46,12 @@ function DoGithubComments(comment_id, page_id) {
                 $.each(comments, function(i, comment) {
 
                     var date = new Date(comment.created_at);
+                    var options = { year: 'numeric', month: 'long', day: 'numeric', hour: "numeric", minute: "numeric"};
 
                     var t = "<div id='gh-comment'>";
                     t += "<img src='" + comment.user.avatar_url + "' width='24px'>";
                     t += "<b><a href='" + comment.user.html_url + "'>" + comment.user.login + "</a></b>";
-                    t += " posted at ";
-                    t += "<em>" + date.toUTCString() + "</em>";
+                    t += "<em>" + date.toLocaleDateString("tr-TR", options) + "</em>";
                     t += "<div id='gh-comment-hr'></div>";
                     t += comment.body_html;
                     t += "</div>";
